@@ -1,7 +1,7 @@
 from ubuntu:15.10
 
 RUN apt-get update -y --fix-missing
-RUN apt-get install -y --fix-missing cpanminus linux-libc-dev zsh cmake pkg-config build-essential openssl libcrypt-ssleay-perl libnet-ssleay-perl libexpat1-dev mysql-common mysql-client libmysqlclient-dev
+RUN apt-get install -y --fix-missing cpanminus linux-libc-dev zsh cmake pkg-config build-essential openssl libcrypt-ssleay-perl libnet-ssleay-perl libexpat1-dev mysql-common mysql-client libmysqlclient-dev python ruby
 
 RUN cpanm --mirror http://mirrors.ibiblio.org/CPAN/ --mirror-only --notest \
   App::cpanminus \
@@ -36,5 +36,3 @@ RUN cpanm --mirror http://mirrors.ibiblio.org/CPAN/ --mirror-only --notest \
   XML::Simple \
   YAML::XS \
   YAML
-
-RUN apt-get install -y ruby
