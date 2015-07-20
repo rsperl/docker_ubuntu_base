@@ -1,7 +1,23 @@
 from ubuntu:15.10
 
-RUN apt-get update -y --fix-missing
-RUN apt-get install -y --fix-missing cpanminus linux-libc-dev zsh cmake pkg-config build-essential openssl libcrypt-ssleay-perl libnet-ssleay-perl libexpat1-dev mysql-common mysql-client libmysqlclient-dev python ruby
+RUN apt-get update -y --fix-missing; \
+        apt-get upgrade -y; \
+        apt-get install -y --fix-missing \
+            cpanminus \
+            linux-libc-dev \
+            zsh \
+            cmake \
+            pkg-config \
+            build-essential \
+            openssl \
+            libcrypt-ssleay-perl \
+            libnet-ssleay-perl \
+            libexpat1-dev \
+            mysql-common \
+            mysql-client \
+            libmysqlclient-dev \
+            python \
+            ruby
 
 RUN cpanm --mirror http://mirrors.ibiblio.org/CPAN/ --mirror-only --notest \
   App::cpanminus \
