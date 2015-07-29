@@ -4,6 +4,7 @@ RUN apt-get update -y --fix-missing; \
         apt-get upgrade -y; \
         apt-get install -y --fix-missing \
             cpanminus \
+            manpages \
             linux-libc-dev \
             zsh \
             cmake \
